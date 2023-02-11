@@ -52,15 +52,15 @@ contract JointSavings {
         /*
         Add and `if` statement to check if the `lastToWithdraw` is not equal to (`!=`) to `recipient` If `lastToWithdraw` is not equal, then set it to the current value of `recipient`.
         */
-        if (last_to_withdraw != recipient) {
-            last_to_withdraw = recipient;
+        if (lastToWithdraw != recipient) {
+            lastToWithdraw = recipient;
         }
 
         // Call the `transfer` function of the `recipient` and pass it the `amount` to transfer as an argument.
         recipient.transfer(amount);
 
         // Set  `lastWithdrawAmount` equal to `amount`
-        last_withdraw_amount = amount;
+        lastWithdrawAmount = amount;
 
         // Call the `contractBalance` variable and set it equal to the balance of the contract by using `address(this).balance` to reflect the new balance of the contract.
         contractBalance = address(this).balance;
